@@ -1,0 +1,63 @@
+
+
+This my small project on Java
+
+
+            Scanner s = new Scanner(System.in);
+   
+            System.out.println("Enter digit one to range :"); // Number One
+            int a = s.nextInt(); // Input One
+            System.out.println("Enter digit two to range :"); // Number Two
+            int b = s.nextInt();// Input Two
+            System.out.println("Enter digit one to range :"); // Number Three
+            int c = s.nextInt(); // Input Three
+
+
+            if ( a > 0 || b > 0 || c > 0 )
+            {
+                if ( a > b && a > c )
+                {
+                    System.out.println(a + "A First");
+                    if (b > c)
+                    {
+
+                        System.out.println(b + "B Second");
+                        System.out.println(c + "C Third");
+                    }
+                    else
+                    {
+                        System.out.println(c + "C Second");
+                        System.out.println(b + "B Three");
+
+                    }
+                }else if( b > a && b > c)
+                {
+                    System.out.println(b + "B First");
+                    if(a > c)
+                    {
+                        System.out.println(a + "A Second");
+                        System.out.println(c + "C Three");
+
+                    }
+                    else
+                    {
+                        System.out.println(c + "C Second");
+                        System.out.println(a + "A Three");
+                    }
+                }else if(c > a && c > b)
+                {
+                    System.out.println(c + "C First");
+                    if(a > c)
+                    {
+                        System.out.println(a + "A Second");
+                        System.out.println(b + "B Three");
+                    }
+                    else
+                    {
+                        System.out.println(b + "B Second");
+                        System.out.println(a + "A Three");
+                    }
+                }
+               
+            }
+
