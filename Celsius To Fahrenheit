@@ -1,0 +1,24 @@
+
+
+This small project converts Celsius To Fahrenheit by Java
+
+
+        Scanner s = new Scanner(System.in);
+        System.out.println("Select (C/F)");
+        String a = s.nextLine();
+
+        if(a.equalsIgnoreCase("c")){
+        
+        System.out.println("Chose Value To Convert : ");
+        double degreeF = s.nextDouble();
+        double degreeC = 5 * (degreeF - 32) /9;
+          System.out.println("Result Is : " + degreeC);
+   }else if(a.equalsIgnoreCase("f")){
+       System.out.println("Chose Value To Convert : ");
+       double degreeC = s.nextDouble();
+       double degreeF = 9 * (degreeC / 5) + 32;
+       System.out.println("Result Is : " + degreeF);
+   }else{
+       System.out.println("The Value is Empty");
+               
+   }
