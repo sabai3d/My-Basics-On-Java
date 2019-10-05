@@ -1,0 +1,77 @@
+        Next
+        
+        
+        
+        Scanner scn = new Scanner(System.in);
+        
+        
+          int[] one = new int[3];
+        int[] two = new int[3];
+        int[] result;
+        for(int i = 0 ; i < one.length; i++){
+            
+            System.out.print("Enter Value of array one : ");
+            int val = scn.nextInt();
+            
+            one[i] = val;
+            
+        }
+        System.out.println();
+        System.out.println("========= Separator =========");
+        System.out.println();
+        for(int i = 0 ; i < two.length; i++){
+            
+            System.out.print("Enter Value of array two : ");
+            int val = scn.nextInt();
+            
+            two[i] = val;
+            
+        }
+        
+        /////////////////////////////////////////
+        
+      
+        // object craeted
+        StringTools s = new StringTools(one , two); 
+        result = s.resultFinal();
+        // loop for value
+       for(int i : result){
+             System.out.println(i);
+       }
+       
+       
+       /////////////////////////////////////////// An other class
+       
+       package main;
+   
+public class StringTools{
+ 
+    public int[] arrayOne;
+    public int[] arrayTwo;
+    
+    
+    public StringTools(int[] arrayOne , int[] arrayTwo){
+        this.arrayOne = arrayOne;
+        this.arrayTwo = arrayTwo;
+                
+      }
+    
+    
+    public int[] resultFinal(){
+        int[] jma3 = new int[arrayOne.length];
+        if(arrayOne.length != arrayTwo.length){
+            System.out.println("Not Allowed");
+             return jma3;
+        }else{
+            
+            for(int i = 0 ; i < arrayOne.length ; i++){
+              jma3[i] = arrayOne[i] * arrayTwo[i];
+             
+            }
+      return jma3;
+        }
+        
+
+    }
+    
+}
