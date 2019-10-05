@@ -1,0 +1,19 @@
+
+Combine two arrays between each other
+
+
+        String one[] = {"Canada" , "Germany" , "Italy"};
+        String two[] = {"Cretia" , "Swiden", "United States Of America"};
+        String combine[] = new String[one.length + two.length];
+        int val = one.length;
+        for(int i = 0 ; i < one.length ; i++){
+            combine[i] = one[i];
+        }
+        for(int i = 0 ; i < two.length ; i++){
+            combine[i + one.length] = two[i];
+        }
+        for(String s : combine){
+            System.out.println(s);
+        }
+        
+        
