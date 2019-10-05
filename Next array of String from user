@@ -1,0 +1,16 @@
+
+Next array of String from user
+
+        Scanner scn = new Scanner(System.in);
+        System.out.print("Enter Lenght of array : ");
+        int val = scn.nextInt();
+        String value[] = new String[val];
+        for(int i = 0; i < value.length ; i++){
+            System.out.print("Enter Value of array : ");
+            String saw = scn.next();
+            value[i] = saw;
+            
+        }
+        for(String s : value){
+            System.out.println(s);
+        }
