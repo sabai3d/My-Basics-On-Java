@@ -1,0 +1,60 @@
+My second small project on Java Swing
+
+package guiswing;
+
+import java.awt.FlowLayout;
+import java.awt.GridLayout;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+public class GUISwing extends JFrame {
+
+    private JPanel pOne, pTwo;
+    private JLabel lOne, lTwo;
+    private JTextField tfOne;
+    private JButton b1, b2, b3, b4, b5;
+
+    public GUISwing() {
+        this.setTitle("My Application");
+        this.setSize(500, 300);
+        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        this.setLayout(new GridLayout(5, 1));
+
+        lOne = new JLabel("Binary");
+        lTwo = new JLabel("Result");
+        tfOne = new JTextField(20);
+        tfOne.setEditable(true);
+
+        b1 = new JButton("0");
+        b2 = new JButton("1");
+        b3 = new JButton("convert 1");
+        b4 = new JButton("convert 2");
+        b5 = new JButton("result");
+
+        pOne = new JPanel(new FlowLayout());
+        pOne.add(lOne);
+        pOne.add(tfOne);
+        pOne.add(lTwo);
+
+        pTwo = new JPanel(new GridLayout(1, 2));
+        pTwo.add(b1);
+        pTwo.add(b2);
+
+        this.add(pOne);
+        this.add(pTwo);
+        this.add(b3);
+        this.add(b4);
+        this.add(b5);
+    }
+
+    public static void main(String[] args) {
+
+        GUISwing one = new GUISwing();
+        one.setVisible(true);
+
+    }
+
+}
