@@ -1,0 +1,77 @@
+
+My small project on Swing counts text
+
+
+package guiswing;
+
+import java.awt.Color;
+import java.awt.Container;
+import java.awt.FlowLayout;
+import java.awt.Font;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import javax.swing.ButtonGroup;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JRadioButton;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
+public class MyFrame extends JFrame {
+
+    private JTextArea text;
+    private JScrollPane sp;
+    private JLabel lb;
+
+    public MyFrame(String title) {
+        super(title);
+        this.setSize(600, 400);
+        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        this.setLocationRelativeTo(this);
+        this.setResizable(false);
+
+        Container container = this.getContentPane();
+        container.setLayout(new FlowLayout());
+        container.setBackground(Color.yellow);
+
+        text = new JTextArea(5, 20);
+        text.setFont(new Font("Arial", Font.BOLD, 20));
+        text.setBackground(Color.RED);
+        text.setForeground(Color.WHITE);
+        text.setLineWrap(true);
+        text.addKeyListener(new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent ke) {
+               // System.out.println(ke.getKeyCode());
+                lb.setText(text.getText().length() + "");
+            }
+
+            @Override
+            public void keyPressed(KeyEvent ke) {
+             //   System.out.println("Pressed");
+            }
+
+            @Override
+            public void keyReleased(KeyEvent ke) {
+             //   System.out.println("Released");
+            }
+
+        });
+        sp = new JScrollPane(text);
+        container.add(sp);
+        lb = new JLabel("  ");
+        lb.setFont(new Font("Arial", Font.BOLD, 20));
+        container.add(lb);
+
+        this.setVisible(true);
+
+    }
+
+}
