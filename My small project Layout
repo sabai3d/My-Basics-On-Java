@@ -1,0 +1,94 @@
+
+
+My small project Layout
+
+
+
+package guiswing;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Container;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
+import java.awt.Font;
+import javax.swing.BorderFactory;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+import javax.swing.border.Border;
+
+public class MyFrame extends JFrame {
+
+    JPanel topPanel, buttomPanel;
+    JButton bt1, bt2, bt3, bt4, bt5;
+    JTextField textf;
+    JTextArea text1, text2;
+
+    public MyFrame(String title) {
+        super(title);
+        this.setSize(800, 600);
+        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        this.setLocationRelativeTo(this);
+        this.setResizable(false);
+
+        Container container = this.getContentPane();
+        //   BorderLayout border = new BorderLayout();
+
+        topPanel = new JPanel();
+
+        topPanel.setBackground(Color.yellow);
+        bt1 = new JButton("Canada");
+        bt1.setPreferredSize(new Dimension(120, 40));
+        bt1.setFont(new Font("Arial", Font.BOLD, 20));
+        topPanel.add(bt1);
+        bt2 = new JButton("Morocco");
+        bt2.setPreferredSize(new Dimension(120, 40));
+        bt2.setFont(new Font("Arial", Font.BOLD, 20));
+        topPanel.add(bt2);
+        bt3 = new JButton("England");
+        bt3.setPreferredSize(new Dimension(120, 40));
+        bt3.setFont(new Font("Arial", Font.BOLD, 20));
+        topPanel.add(bt3);
+        bt4 = new JButton("United States Of America");
+        bt4.setPreferredSize(new Dimension(300, 40));
+        bt4.setFont(new Font("Arial", Font.BOLD, 20));
+        topPanel.add(bt4);
+        FlowLayout fl = new FlowLayout();
+        fl.setAlignment(FlowLayout.LEFT);
+        topPanel.setLayout(fl);
+        container.add(topPanel, BorderLayout.NORTH);
+
+        /////////////////////
+        text1 = new JTextArea(0, 20);
+        Border border = BorderFactory.createLineBorder(Color.BLACK, 6);
+        text1.setFont(new Font("Arial", Font.BOLD, 20));
+        text1.setBackground(Color.RED);
+        text1.setBorder(border);
+        container.add(text1, BorderLayout.WEST);
+        text2 = new JTextArea(0, 20);
+
+        text2.setBorder(border);
+        text2.setFont(new Font("Arial", Font.BOLD, 20));
+        text2.setBackground(Color.ORANGE);
+        container.add(text2, BorderLayout.CENTER);
+        ////////////////////////
+        buttomPanel = new JPanel();
+        buttomPanel.setBackground(Color.yellow);
+        textf = new JTextField(30);
+        // textf.setPreferredSize(new Dimension(0 , 40));
+        textf.setFont(new Font("Arial", Font.BOLD, 20));
+        buttomPanel.add(textf);
+        bt5 = new JButton("Send Message");
+        bt5.setPreferredSize(new Dimension(200, 40));
+        bt5.setFont(new Font("Arial", Font.BOLD, 20));
+        buttomPanel.add(bt5);
+        container.add(buttomPanel, BorderLayout.SOUTH);
+        this.setVisible(true);
+
+    }
+
+}
